@@ -16,14 +16,28 @@
 
 #pragma once
 
-#include "quantum.h"
+#define DIODE_DIRECTION ROW2COL
 
-#if   defined(KEYBOARD_keychron_q1_v1_ansi)
-#    include "ansi.h"
-#elif defined(KEYBOARD_keychron_q1_v1_ansi_encoder)
-#    include "ansi_encoder.h"
-#elif defined(KEYBOARD_keychron_q1_v1_iso)
-#    include "iso.h"
-#elif defined(KEYBOARD_keychron_q1_v1_iso_encoder)
-#    include "iso_encoder.h"
-#endif
+/* key matrix size */
+#define MATRIX_ROWS 6
+#define MATRIX_COLS 15
+
+/* key matrix pins */
+#define MATRIX_ROW_PINS { D3, D2, B3, B2, B1, B0 }
+#define MATRIX_COL_PINS { D5, D4, D6, D7, B4, B5, B6, C6, C7, F7, F6, F5, F4, F1, F0 }
+
+/* DIP switch */
+#define DIP_SWITCH_MATRIX_GRID  { {0,1} }
+
+/* RGB Matrix Driver Configuration */
+#define DRIVER_COUNT 2
+#define DRIVER_ADDR_1 0b1010000
+#define DRIVER_ADDR_2 0b1011111
+
+/* RGB Matrix Configuration */
+#define DRIVER_1_LED_TOTAL 59
+#define DRIVER_2_LED_TOTAL 24
+#define DRIVER_LED_TOTAL (DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL)
+
+/* Enable caps-lock LED */
+#define CAPS_LOCK_LED_INDEX 44

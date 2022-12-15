@@ -1,4 +1,4 @@
-/* Copyright 2021 @ Keychron (https://www.keychron.com)
+/* Copyright 2020 QMK
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,7 @@
 
 #pragma once
 
-#include "quantum.h"
+#define HAL_USE_I2C TRUE
+#define PAL_USE_CALLBACKS TRUE
 
-#if   defined(KEYBOARD_keychron_q1_v1_ansi)
-#    include "ansi.h"
-#elif defined(KEYBOARD_keychron_q1_v1_ansi_encoder)
-#    include "ansi_encoder.h"
-#elif defined(KEYBOARD_keychron_q1_v1_iso)
-#    include "iso.h"
-#elif defined(KEYBOARD_keychron_q1_v1_iso_encoder)
-#    include "iso_encoder.h"
-#endif
+#include_next <halconf.h>
