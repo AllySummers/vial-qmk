@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,            KC_TRNS,
         KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,             KC_TRNS,            KC_TRNS,
         KC_TRNS,            KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,             KC_TRNS,  KC_PGUP,
-        KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_HOME,  KC_PGDN,  KC_END
+        KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                MO(FN_2), KC_TRNS,   KC_TRNS,  KC_HOME,  KC_PGDN,  KC_END
       ),
 
     [FN_2] = LAYOUT_ansi_82(
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,            KC_TRNS,
         KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,             KC_TRNS,            KC_TRNS,
         KC_TRNS,            KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,             KC_TRNS,  KC_TRNS,
-        KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS
+        KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,   MO(FN_3),  KC_TRNS,  KC_TRNS,  KC_TRNS
       ),
 
     [FN_3] = LAYOUT_ansi_82(
@@ -72,6 +72,32 @@ void keyboard_post_init_user(void) {
 
     dynamic_keymap_set_tap_dance(0, &tap_dance_0);
 }
+
+void rgb_matrix_indicators_user(void) {
+    uint8_t layer = get_highest_layer(layer_state);
+
+    if (host_keyboard_led_state().caps_lock) {
+        rgb_matrix_set_color(45, RGB_RED);
+    }
+
+    switch (layer) {
+        case BASE:
+            rgb_matrix_set_color(1, RGB_RED);
+            break;
+        case FN_1:
+            rgb_matrix_set_color(2, RGB_RED);
+            break;
+        case FN_2:
+            rgb_matrix_set_color(3, RGB_RED);
+            break;
+        case FN_3:
+            rgb_matrix_set_color(4, RGB_RED);
+            break;
+        default:
+            break;
+    }
+}
+
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
