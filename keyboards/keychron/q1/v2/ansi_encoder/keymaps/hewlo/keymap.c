@@ -75,9 +75,38 @@ void keyboard_post_init_user(void) {
 
 void rgb_matrix_indicators_user(void) {
     uint8_t layer = get_highest_layer(layer_state);
+	uint8_t modifiers = get_mods();
 
     if (host_keyboard_led_state().caps_lock) {
         rgb_matrix_set_color(45, RGB_RED);
+    }
+
+    if (modifiers & MOD_BIT(KC_LEFT_SHIFT)) {
+        rgb_matrix_set_color(59, RGB_RED);
+    }
+
+    if (modifiers & MOD_BIT(KC_LEFT_CTRL)) {
+        rgb_matrix_set_color(72, RGB_RED);
+    }
+
+    if (modifiers & MOD_BIT(KC_LEFT_GUI)) {
+        rgb_matrix_set_color(73, RGB_RED);
+    }
+
+    if (modifiers & MOD_BIT(KC_LEFT_ALT)) {
+        rgb_matrix_set_color(74, RGB_RED);
+    }
+
+    if (modifiers & MOD_BIT(KC_RIGHT_ALT)) {
+        rgb_matrix_set_color(76, RGB_RED);
+    }
+
+    if (modifiers & MOD_BIT(KC_RIGHT_CTRL)) {
+        rgb_matrix_set_color(78, RGB_RED);
+    }
+
+    if (modifiers & MOD_BIT(KC_RIGHT_SHIFT)) {
+        rgb_matrix_set_color(80, RGB_RED);
     }
 
     switch (layer) {
@@ -96,6 +125,12 @@ void rgb_matrix_indicators_user(void) {
         default:
             break;
     }
+}
+
+bool dip_switch_update_user(uint8_t index, bool active) {
+    layer_invert(FN_3);
+
+    return true;
 }
 
 
