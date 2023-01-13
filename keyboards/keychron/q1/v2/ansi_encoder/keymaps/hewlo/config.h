@@ -4,11 +4,20 @@
 
 #define VIAL_KEYBOARD_UID {0x0D, 0x74, 0x8A, 0xA6, 0x30, 0x70, 0x69, 0x69}
 
+/* Total size of the EEPROM storage in bytes */
+#define TRANSIENT_EEPROM_SIZE 1024
+
 #define VIAL_UNLOCK_COMBO_ROWS { 0, 2 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 13 }
 
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_KEYPRESSES
+
+#define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_RAINBOW_MOVING_CHEVRON // Sets the default mode, if none has been set
+// #define RGB_MATRIX_STARTUP_HUE 0 // Sets the default hue value, if none has been set
+// #define RGB_MATRIX_STARTUP_SAT 255 // Sets the default saturation value, if none has been set
+// #define RGB_MATRIX_STARTUP_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS // Sets the default brightness value, if none has been set
+// #define RGB_MATRIX_STARTUP_SPD 127 // Sets the default animation speed, if none has been set
 
 #define ENABLE_RGB_MATRIX_ALPHAS_MODS
 #define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
