@@ -246,7 +246,7 @@
             ]
         ]
     },
-    "lighting": "vialrgb",
+    "lighting": "qmk_rgblight",
     "matrix": { "rows": 6, "cols": 16 },
     "name": "Keychron Q1",
     "productId": "0x0107",

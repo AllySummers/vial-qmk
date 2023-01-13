@@ -10,12 +10,6 @@
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_KEYPRESSES
 
-#define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_RAINBOW_MOVING_CHEVRON // Sets the default mode, if none has been set
-// #define RGB_MATRIX_STARTUP_HUE 0 // Sets the default hue value, if none has been set
-// #define RGB_MATRIX_STARTUP_SAT 255 // Sets the default saturation value, if none has been set
-// #define RGB_MATRIX_STARTUP_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS // Sets the default brightness value, if none has been set
-// #define RGB_MATRIX_STARTUP_SPD 127 // Sets the default animation speed, if none has been set
-
 #define ENABLE_RGB_MATRIX_ALPHAS_MODS
 #define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
 #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
@@ -61,3 +55,9 @@
 #define ENABLE_RGB_MATRIX_MULTISPLASH
 #define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
+
+#define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_RAINBOW_MOVING_CHEVRON // Sets the default mode, if none has been set
+// #define RGB_MATRIX_STARTUP_HUE 0 // Sets the default hue value, if none has been set
+// #define RGB_MATRIX_STARTUP_SAT 255 // Sets the default saturation value, if none has been set
+// #define RGB_MATRIX_STARTUP_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS // Sets the default brightness value, if none has been set
+// #define RGB_MATRIX_STARTUP_SPD 127 // Sets the default animation speed, if none has been set
