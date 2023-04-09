@@ -85,7 +85,7 @@ void keyboard_post_init_user(void) {
 
 void rgb_matrix_indicators_user(void) {
     uint8_t layer = get_highest_layer(layer_state);
-	  uint8_t modifiers = get_mods();
+	uint8_t modifiers = get_mods();
 
     if (host_keyboard_led_state().caps_lock) {
         rgb_matrix_set_color(45, RGB_RED);
