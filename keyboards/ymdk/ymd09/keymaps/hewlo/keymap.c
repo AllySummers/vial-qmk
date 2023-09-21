@@ -35,54 +35,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-/* === Combos === */
-
-enum combo_events {
-  /* START - do not move index */
-  GOTO_BASE,
-  GOTO_FN_1,
-  GOTO_FN_2,
-  GOTO_FN_3,
-  /* END - do not move index */
-};
-
-const uint16_t PROGMEM layer_base_combo[]   = { KC_F20, KC_F21, COMBO_END};
-const uint16_t PROGMEM layer_fn1_combo[]    = { KC_F20, KC_F16, COMBO_END};
-const uint16_t PROGMEM layer_fn2_combo[]    = { KC_F20, KC_F19, COMBO_END};
-const uint16_t PROGMEM layer_fn3_combo[]    = { KC_F20, KC_F22, COMBO_END};
-
-combo_t key_combos[VIAL_COMBO_ENTRIES] = {
-  [GOTO_BASE]     = COMBO_ACTION(layer_base_combo),
-  [GOTO_FN_1]     = COMBO_ACTION(layer_fn2_combo),
-  [GOTO_FN_2]     = COMBO_ACTION(layer_fn1_combo),
-  [GOTO_FN_3]     = COMBO_ACTION(layer_fn3_combo),
-};
-
-void process_combo_event(uint16_t combo_index, bool pressed) {
-  if (pressed) {
-    layer_clear();
-    layer_off(BASE);
-    layer_off(FN_1);
-    layer_off(FN_2);
-    layer_off(FN_3);
-
-    switch(combo_index) {
-      case GOTO_BASE:
-        layer_on(BASE);
-        break;
-      case GOTO_FN_1:
-        layer_on(FN_1);
-        break;
-      case GOTO_FN_2:
-        layer_on(FN_2);
-        break;
-      case GOTO_FN_3:
-        layer_on(FN_3);
-        break;
-    }
-  }
-}
-
 /* === Layer Lighting === */
 
 /*

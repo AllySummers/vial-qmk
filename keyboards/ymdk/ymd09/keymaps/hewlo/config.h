@@ -10,8 +10,6 @@
 #define COMBO_ONLY_FROM_LAYER 0
 #define COMBO_TERM 300
 
-#define VIAL_COMBO_ENTRIES 4
-
 /* === RGB === */
 
 #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_STATIC_LIGHT // Sets the default mode, if none has been set
@@ -19,6 +17,7 @@
 #define RGBLIGHT_DEFAULT_SAT 255 // Sets the default saturation value, if none has been set
 #define RGBLIGHT_DEFAULT_VAL 255 // Sets the default brightness value, if none has been set
 #define RGBLIGHT_DEFAULT_SPD 0 // Sets the default animation speed, if none has been set
+#define RGBLIGHT_SLEEP // If defined, synchronization functionality for split keyboards is added
 
 #define RGBLIGHT_EFFECT_ALTERNATING
 #define RGBLIGHT_EFFECT_BREATHING
@@ -31,5 +30,6 @@
 #define RGBLIGHT_EFFECT_STATIC_GRADIENT
 #define RGBLIGHT_EFFECT_TWINKLE
 
-
 #define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
+
+#undef RGBLIGHT_ANIMATIONS
