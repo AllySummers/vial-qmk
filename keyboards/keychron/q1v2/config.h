@@ -29,10 +29,7 @@
 #define I2C1_TIMINGR_SCLL 51U
 
 /* DIP switch */
-#define DIP_SWITCH_MATRIX_GRID \
-    {                          \
-        { 5, 4 }               \
-    }
+#define DIP_SWITCH_MATRIX_GRID  { {5,4} }
 
 /* Disable DIP switch in matrix data */
 #define MATRIX_MASKED
